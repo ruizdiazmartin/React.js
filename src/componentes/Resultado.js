@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Imagen from './Imagen'
+import Paginacion from './Paginacion'
 
 
 export default class Resultado extends Component {
@@ -9,7 +10,7 @@ export default class Resultado extends Component {
 
 		if (imagenes.length === 0) return null;
 
-		console.log(imagenes)
+		//console.log(imagenes)
 
 		return (
 			<div>
@@ -20,9 +21,11 @@ export default class Resultado extends Component {
 							imagen={imagen}
 						/>
 					))}
-
-
 				</div>
+				<Paginacion
+					paginaAnterior={this.props.paginaAnterior}
+					paginaSiguiente={this.props.paginaSiguiente}
+				/>
 			</div>
 		)
 	}
